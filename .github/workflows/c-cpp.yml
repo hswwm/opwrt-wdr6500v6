@@ -1,0 +1,23 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: update
+      run: ./scripts/feeds update -a
+    - name: install
+      run: ./scripts/feeds install -a
+    - name: mkdl
+      run: make -j8 download
+    - name: mk
+      run: make
