@@ -22,7 +22,8 @@ jobs:
     - name: mkdl
       run: make -j8 download
     - name: mk
-      run: make
+      run: |
+           make
            echo "======================="
            echo "Space usage:"
            echo "======================="
