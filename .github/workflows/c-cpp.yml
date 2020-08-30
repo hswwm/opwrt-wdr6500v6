@@ -19,7 +19,7 @@ jobs:
     - name: install
       run: ./scripts/feeds install -a
     - name: conf
-      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
+      run: contains(github.event.action, 'ssh')
       #run: make menuconfig
     - name: mkdl
       run: make -j8 download
