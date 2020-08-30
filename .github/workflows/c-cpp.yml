@@ -5,7 +5,8 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+env:
+  SSH_ACTIONS: ture
 jobs:
   build:
 
@@ -18,7 +19,7 @@ jobs:
     - name: install
       run: ./scripts/feeds install -a
     - name: conf
-      run: make defconfig
+      run: make menuconfig
     - name: mkdl
       run: make -j8 download
     - name: mk
