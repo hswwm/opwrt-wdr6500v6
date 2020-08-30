@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
 env:
-  SSH_ACTIONS: ture
+  SSH_ACTIONS: true
 jobs:
   build:
 
