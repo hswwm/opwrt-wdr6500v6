@@ -21,7 +21,8 @@ jobs:
     - name: conf
       #uses: P3TERX/debugger-action@main
       #if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
-      run: make menuconfig
+      #run: make menuconfig
+      run: make defconfig
     - name: mkdl
       run: make -j8 download
     - name: mk
@@ -44,7 +45,7 @@ jobs:
           mkdir -p ./artifact/buildinfo
           rm -rf $(find ./bin/targets/ -type d -name "packages")
           cp -rf $(find ./.config -type f) ./artifact/firmware/
-          cp -rf $(find ./bin/targets/ -type f) ./artifact/firmware/
+          cp -rf $(find ./bin -type f) ./artifact/firmware/
           cp -rf $(find ./bin/packages/ -type f -name "*.ipk") ./artifact/package/
           cp -rf $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/
     - name: Deliver buildinfo
