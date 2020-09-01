@@ -75,7 +75,8 @@ jobs:
           path: ./bin/targets/
           
     - name: Upload release asset
-      uses:  svenstaro/upload-release-action@v2
+      if: github.event == 'release'
+      uses: svenstaro/upload-release-action@v2
       with:
           repo_token: ${{ secrets.YOURTOKEN }}
           file: ./artifact/firmware/*
