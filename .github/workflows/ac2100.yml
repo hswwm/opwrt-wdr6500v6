@@ -12,26 +12,26 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-#     - name: update
-#       run: ./scripts/feeds update -a
-#     - name: install
-#       run: ./scripts/feeds install -a
-#     - name: conf
+    - name: update
+      run: ./scripts/feeds update -a
+    - name: install
+      run: ./scripts/feeds install -a
+    - name: conf
       #uses: P3TERX/debugger-action@main
       #if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
       #run: make menuconfig
-#       run: make defconfig
-#     - name: mkdl
-#       run: make -j8 download
+      run: make defconfig
+    - name: mkdl
+      run: make -j8 download
 
     - name: Prepare artifact
       run: |
-          #mkdir -p ../artifact/code
-          #cp -rf ./* ../artifact/code
-          pwd
+          mkdir -p ../artifact/code
+          cp -rf ./* ../artifact/code
+          
     - name: Deliver buildinfo
       uses: actions/upload-artifact@v2
       with:
           name: OpenWrt_buildinfo
-          path: ./artifact/code/
+          path: /home/runner/work/opwrt-wdr6500v6/artifact/code/
 
