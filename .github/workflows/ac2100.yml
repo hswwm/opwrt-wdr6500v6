@@ -22,16 +22,16 @@ jobs:
     - name: mkdl
       run: make -j8 download
 
-    - name: Prepare artifact
-      run: |
-          mkdir -p ../artifact/code
-          cp -rf ./* ../artifact/code
+#     - name: Prepare artifact
+#       run: |
+#           mkdir -p ../artifact/code
+#           cp -rf ./* ../artifact/code
           
-    - name: Deliver buildinfo
-      uses: actions/upload-artifact@v2
-      with:
-          name: OpenWrt_buildinfo
-          path: /home/runner/work/opwrt-wdr6500v6/artifact/code/
+#     - name: Deliver buildinfo
+#       uses: actions/upload-artifact@v2
+#       with:
+#           name: OpenWrt_buildinfo
+#           path: /home/runner/work/opwrt-wdr6500v6/artifact/code/
 
     - name: ssh
       uses: P3TERX/debugger-action@main
