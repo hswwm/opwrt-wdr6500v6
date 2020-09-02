@@ -36,7 +36,7 @@ jobs:
       run: make -j8 download
     - name: mk
       run: |
-           make
+           make V=s
            echo "======================="
            echo "Space usage:"
            echo "======================="
