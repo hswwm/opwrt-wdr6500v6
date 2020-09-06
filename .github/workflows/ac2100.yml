@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: C/C++ CI ac2100
 
 on:
   workflow_dispatch:
