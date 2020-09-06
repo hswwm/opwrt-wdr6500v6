@@ -28,10 +28,10 @@ jobs:
     - name: install
       run: ./scripts/feeds install -a
     - name: conf
-      uses: P3TERX/debugger-action@main
-      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
+      #uses: P3TERX/debugger-action@main
+      #if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
       #run: make menuconfig
-      #run: make defconfig
+      run: make defconfig
     - name: mkdl
       run: make -j8 download
     - name: mk
