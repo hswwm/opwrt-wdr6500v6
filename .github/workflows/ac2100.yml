@@ -36,16 +36,7 @@ jobs:
       run: make -j8 download
     - name: mk
       run: |
-           make
-         #  echo "======================="
-         #  echo "Space usage:"
-         #  echo "======================="
-         #  df -h
-        #   echo "======================="
-         #  du -h --max-depth=1 ./ --exclude=build_dir --exclude=bin
-          # du -h --max-depth=1 ./build_dir
-           #du -h --max-depth=1 ./bin
-      
+           make      
     - name: Prepare artifact
       run: |
           mkdir -p ./artifact/firmware/configfile
