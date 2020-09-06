@@ -30,7 +30,7 @@ jobs:
     - name: conf
       uses: P3TERX/debugger-action@main
       if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
-      run: make menuconfig
+      #run: make menuconfig
       #run: make defconfig
     - name: mkdl
       run: make -j8 download
